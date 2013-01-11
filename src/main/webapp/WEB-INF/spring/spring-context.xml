@@ -11,4 +11,27 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+	<context:property-placeholder/>
+
+	<bean id="appMode" class="java.lang.String">
+		<constructor-arg value="${app.mode}" />
+	</bean>
+
+	<bean id="appSettings" class="com.richardhoppes.example.common.Settings">
+		<property name="configProperties">
+			<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+				<property name="propertiesArray">
+					<list>
+						<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+							<property name="location" value="classpath:/config/default.properties"/>
+						</bean>
+						<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+							<property name="location" value="classpath:/config/#{appMode}.properties"/>
+						</bean>
+					</list>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
 </beans>

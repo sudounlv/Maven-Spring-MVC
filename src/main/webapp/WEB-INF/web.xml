@@ -8,8 +8,14 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/spring-context.xml</param-value>
+		<param-value>
+			/WEB-INF/spring/spring-context.xml
+		</param-value>
 	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 	<servlet>
 		<servlet-name>springMVCServlet</servlet-name>
