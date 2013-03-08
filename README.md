@@ -10,5 +10,4 @@ mvn jetty:run
 
 http://localhost:8080/
 
-http://localhost:8080/mode.json
-
+http://localhost:8080/home.json
