@@ -19,17 +19,17 @@ public class HomeController {
 	@Autowired
 	Settings settings;
 
-	@RequestMapping(value={"/", "/settings"})
+	@RequestMapping(value={"/", "/home"})
 	public String actionJspTest(Model model) {
 		try {
 			model.addAttribute("mode", settings.getMode());
 		} catch (NotFoundException ex) {
 			model.addAttribute("mode", "unknown");
 		}
-		return "home/settings";
+		return "home";
 	}
 
-	@RequestMapping(value="/settings.json")
+	@RequestMapping(value="/home.json")
 	public @ResponseBody Map<String, String> actionJsonTest() {
 		Map<String, String> retMap = new HashMap<String, String>();
 		try {
