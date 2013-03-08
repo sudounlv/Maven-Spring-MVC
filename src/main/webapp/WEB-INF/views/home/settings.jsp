@@ -10,7 +10,7 @@
 	<title>example app</title>
 </head>
 <body>
-	example app
+	Example JSP Page
 	<br/>
 	Mode: ${mode}
 </body>

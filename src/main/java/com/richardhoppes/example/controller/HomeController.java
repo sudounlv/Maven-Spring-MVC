@@ -19,23 +19,25 @@ public class HomeController {
 	@Autowired
 	Settings settings;
 
-	@Autowired
-	DeveloperDAO developerDAO;
-
-	@RequestMapping(value="/")
-	public @ResponseBody Map<String, String> actionHome(Model model) {
-		Map<String, String> retVal = new HashMap<String, String>();
+	@RequestMapping(value={"/", "/settings"})
+	public String actionJspTest(Model model) {
 		try {
-			retVal.put("mode", settings.getMode());
-		} catch (NotFoundException e) {
-			retVal.put("mode", "unknown");
+			model.addAttribute("mode", settings.getMode());
+		} catch (NotFoundException ex) {
+			model.addAttribute("mode", "unknown");
 		}
-		return retVal;
+		return "home/settings";
 	}
 
-	@RequestMapping(value="/daoJsonTest")
-	public @ResponseBody Developer actionTest(Model model) {
-		return developerDAO.getDeveloperByApiKey("durr");
+	@RequestMapping(value="/settings.json")
+	public @ResponseBody Map<String, String> actionJsonTest() {
+		Map<String, String> retMap = new HashMap<String, String>();
+		try {
+			retMap.put("mode", settings.getMode());
+		} catch (NotFoundException ex) {
+			retMap.put("mode", "unknown");
+		}
+		return retMap;
 	}
 
 }
