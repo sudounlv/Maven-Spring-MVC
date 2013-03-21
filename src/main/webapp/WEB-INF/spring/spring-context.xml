@@ -11,12 +11,19 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+	<!-- Init system properties checker - provides useful errors :) -->
 	<context:property-placeholder/>
 
+	<!-- Grab the app mode from JVM argument -->
 	<bean id="appMode" class="java.lang.String">
 		<constructor-arg value="${app.mode}" />
 	</bean>
 
+	<!--
+	Get an instance of Settings class with default/mode properties injected
+	** Properties defined in mode specific properties files (e.g. dev, prod) will override the properties in default.properties
+	** Properties defined in properties files need a getter defined in the Settings class before they can be used
+	-->
 	<bean id="appSettings" class="com.richardhoppes.example.common.Settings">
 		<property name="configProperties">
 			<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">

@@ -10,8 +10,9 @@
 	<title>example app</title>
 </head>
 <body>
-	Example JSP Page
-	<br/>
-	Mode: ${mode}
+	<h2>Example JSP Page</h2>
+
+	<strong>Mode:</strong> ${mode}<br/>
+	<strong>Return Type:</strong> ${returnType}
 </body>
 </html>

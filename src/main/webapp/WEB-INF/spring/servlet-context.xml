@@ -11,15 +11,21 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+	<!-- Spring MVC documentation: http://static.springsource.org/spring/docs/3.0.x/reference/mvc.html -->
+
+	<!-- Basically sets up some sane defaults that allow spring to dispatch requests to @Controllers -->
 	<mvc:annotation-driven />
 
+	<!-- Resolve view names to views -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
 
+	<!-- Autodetect controller classes annotated with @Controller -->
 	<context:component-scan base-package="com.richardhoppes.example.controller"/>
 
+	<!-- URL patterns for static resource requests -->
 	<mvc:resources mapping="/js/**" location="/WEB-INF/views/js/"/>
 	<mvc:resources mapping="/css/**" location="/WEB-INF/views/css/"/>
 	<mvc:resources mapping="/img/**" location="/WEB-INF/views/img/"/>
