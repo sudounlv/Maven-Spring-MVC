@@ -11,7 +11,7 @@
 	Each DAO extends the SqlMapClientDaoSupport class, and we pass in the sqlMapClient, we would like to use (defined in spring-data.xml)
 	-->
 
-	<bean id="developerDAO" class="com.richardhoppes.example.dao.DeveloperDAO">
+	<bean id="developerDAO" class="com.richardhoppes.example.dao.ProductDAO">
 		<property name="sqlMapClient" ref="readWriteSqlMapClient"/>
 	</bean>
 

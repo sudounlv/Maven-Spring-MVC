@@ -1,0 +1,57 @@
+# Sequel Pro dump
+# Version 2492
+# http://code.google.com/p/sequel-pro
+#
+# Host: 127.0.0.1 (MySQL 5.5.25)
+# Database: example
+# Generation Time: 2013-03-28 21:04:52 +0000
+# ************************************************************
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table product
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `product`;
+
+CREATE TABLE `product` (
+  `product_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` (`product_id`,`product_name`)
+VALUES
+	(1,'iPhone 4'),
+	(2,'iPhone 4S'),
+	(3,'iPhone 5'),
+	(4,'Nexus 4'),
+	(5,'Galaxy S3'),
+	(6,'Galaxy S4'),
+	(7,'Lumia 810'),
+	(8,'Lumia 920');
+
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Product">
+
+	<resultMap id="ProductResult" class="com.richardhoppes.example.model.Product">
+		<result property="id" column="product_id"/>
+		<result property="name" column="product_name"/>
+	</resultMap>
+
+	<select id="getProductById" parameterClass="java.lang.Integer" resultMap="Product.ProductResult">
+		SELECT
+			p.product_id,
+			p.product_name
+		FROM product p
+		WHERE p.product_id = #value#
+	</select>
+
+	<select id="getAllProducts" resultMap="Product.ProductResult">
+		SELECT
+			p.product_id,
+			p.product_name
+		FROM product p
+	</select>
+
+</sqlMap>

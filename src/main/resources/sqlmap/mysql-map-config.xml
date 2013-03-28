@@ -6,6 +6,6 @@
 
 	<settings useStatementNamespaces="true" lazyLoadingEnabled="false"/>
 
-	<sqlMap resource="sqlmap/developer.xml"/>
+	<sqlMap resource="sqlmap/product.xml"/>
 
 </sqlMapConfig>
