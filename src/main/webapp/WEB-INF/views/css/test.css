@@ -1,0 +1,18 @@
+textarea.response,
+textarea.request {
+	width: 90%;
+}
+
+input[type=text],
+textarea {
+	width: 300px;
+}
+
+div.field-description {
+	padding-right: 6px;
+	border-top: 1px solid #808080; width: 500px; background-color: #b3b3b3; color: #fff;
+}
+
+div.field-description > div {
+	padding: 5px;
+}

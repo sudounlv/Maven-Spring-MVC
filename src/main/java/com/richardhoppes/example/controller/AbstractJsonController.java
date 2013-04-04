@@ -22,7 +22,7 @@ public abstract class AbstractJsonController {
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public @ResponseBody
 	Map<String, String> handleException(ResourceNotFoundException ex) {
-		return createStandardErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
+		return createStandardResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
 
 	/**
@@ -31,12 +31,13 @@ public abstract class AbstractJsonController {
 	 * @param httpStatus
 	 * @return Error response map
 	 */
-	private Map<String, String> createStandardErrorResponse(String message, HttpStatus httpStatus) {
+	protected Map<String, String> createStandardResponse(String message, HttpStatus httpStatus) {
 		Map<String, String> retVal = new HashMap<String, String>();
-		retVal.put("error_message", message);
+		retVal.put("message", message);
 		retVal.put("status_code", httpStatus.toString());
 		retVal.put("status_message", httpStatus.getReasonPhrase());
 		return retVal;
 	}
+
 
 }

@@ -9,6 +9,7 @@
 	</resultMap>
 
 	<select id="getProductById" parameterClass="java.lang.Integer" resultMap="Product.ProductResult">
+		/*Product.getProductById*/
 		SELECT
 			p.product_id,
 			p.product_name
@@ -17,10 +18,26 @@
 	</select>
 
 	<select id="getAllProducts" resultMap="Product.ProductResult">
+		/*Product.getAllProducts*/
 		SELECT
 			p.product_id,
 			p.product_name
 		FROM product p
 	</select>
+
+	<insert id="createProduct" parameterClass="com.richardhoppes.example.model.Product">
+		INSERT INTO product (product_name) VALUES (#name#)
+		<selectKey resultClass="java.lang.Integer" type="post" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS value
+		</selectKey>
+	</insert>
+
+	<insert id="updateProduct" parameterClass="com.richardhoppes.example.model.Product">
+		UPDATE product set product_name = #name# WHERE product_id = #id#
+	</insert>
+
+	<delete id="deleteProduct" parameterClass="java.lang.Integer">
+		DELETE FROM product WHERE product_id = #value#
+	</delete>
 
 </sqlMap>
