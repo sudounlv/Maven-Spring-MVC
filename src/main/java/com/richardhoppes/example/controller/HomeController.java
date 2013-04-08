@@ -2,6 +2,8 @@ package com.richardhoppes.example.controller;
 
 import com.richardhoppes.example.common.Settings;
 import com.richardhoppes.example.exception.NotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,8 @@ import java.util.Map;
 
 @Controller
 public class HomeController {
+
+	private Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	Settings settings;
@@ -28,6 +32,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value={"/", "/home"})
 	public String actionHome(Model model) {
+		log.info("actionHome");
+
 		try {
 			model.addAttribute("mode", settings.getMode());
 		} catch (NotFoundException ex) {
@@ -46,6 +52,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value="/home/modelAndView")
 	public ModelAndView actionHomeModelAndView(Model model) {
+		log.info("actionHomeModelAndView");
+
 		try {
 			model.addAttribute("mode", settings.getMode());
 		} catch (NotFoundException ex) {
@@ -61,6 +69,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value="/home.json")
 	public @ResponseBody Map<String, String> actionHomeJson() {
+		log.info("actionHomeJson");
+
 		Map<String, String> retMap = new HashMap<String, String>();
 		try {
 			retMap.put("mode", settings.getMode());
