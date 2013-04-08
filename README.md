@@ -29,3 +29,7 @@ http://localhost:8080/
 
 http://localhost:8080/home.json
 
+**Test Product Controller**
+
+http://localhost:8080/test/product
+
