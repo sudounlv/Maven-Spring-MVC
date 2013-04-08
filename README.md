@@ -21,7 +21,7 @@ mvn jetty:run
 
 **Running with Maven Jetty Plugin in a specific mode**
 
-mvn jetty:run -Dapp.mode={mode} (e.g. mvn jetty:run -Dapp.mode=development)
+mvn jetty:run -Dapp.mode={mode} (e.g. mvn jetty:run -Dapp.mode=dev)
 
 **Check if it's running**
 
