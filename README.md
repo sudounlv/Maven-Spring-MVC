@@ -21,31 +21,31 @@ Alternatively, you can download <a href="http://www.apachefriends.org/en/xampp.h
 
 ****
 
-To build and run the application, type the following commands from the base directory of the project: 
+**To build and run the application, type the following commands from the base directory of the project:** 
 
-**Building with Maven**
+***Building with Maven***
 
 mvn clean install
 
-**Running with Maven Jetty Plugin**
+***Running with Maven Jetty Plugin***
 
 mvn jetty:run
 
-**Running with Maven Jetty Plugin in a specific mode**
+***Running with Maven Jetty Plugin in a specific mode***
 
 mvn jetty:run -Dapp.mode={mode} (e.g. mvn jetty:run -Dapp.mode=dev)
 
 ****
 
-Use the following URLs to see if your project is working: 
+**Use the following URLs to see if your project is working:**
 
-**Check if it's running**
+***Home Controller***
 
 http://localhost:8080/
 
 http://localhost:8080/home.json
 
-**Test Product Controller**
+***Test Product Controller***
 
 http://localhost:8080/test/product
 
