@@ -6,8 +6,13 @@ http://maven.apache.org/download.cgi
 
 1. Download MySQL: http://dev.mysql.com/downloads/mysql/
 2. Install/Setup MySQL: http://dev.mysql.com/tech-resources/articles/mysql_intro.html
-3. Import data file: mysql -u username -p example < /src/main/resources/example.sql
-4. Set database properties /src/main/resources/config/default.properties
+
+Alternatively, you can download <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a>, an Apache distribution that includes MySQL, PHP and Perl.  We will only be using MySQL for our purposes, but this is a much faster/easier way to get it up and going.
+
+**Importing Data / Configuration**
+
+1. Using your favorite SQL client, create a database called "example", then run the example sql script included at /src/main/resources/example.sql.  If you would prefer to do this from the command line, you can run the following command after you have created your "example" database: mysql -u username -p example < /**path-to-project**/src/main/resources/example.sql
+2. Modify your database properties in /src/main/resources/config/default.properties
 
 ****
 
