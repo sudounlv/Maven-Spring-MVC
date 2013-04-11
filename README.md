@@ -2,6 +2,11 @@
 
 http://maven.apache.org/download.cgi
 
+**Downloading / Installing git**
+
+http://git-scm.com/downloads
+
+
 **Downloading / Installing MySQL**
 
 1. Download MySQL: http://dev.mysql.com/downloads/mysql/
