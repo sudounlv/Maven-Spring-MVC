@@ -2,7 +2,7 @@
 
 http://maven.apache.org/download.cgi
 
-**Downloading / Installing git**
+**Downloading / Installing Git**
 
 http://git-scm.com/downloads
 
