@@ -21,6 +21,8 @@ Alternatively, you can download <a href="http://www.apachefriends.org/en/xampp.h
 
 ****
 
+To build and run the application, type the following commands from the base directory of the project: 
+
 **Building with Maven**
 
 mvn clean install
@@ -32,6 +34,10 @@ mvn jetty:run
 **Running with Maven Jetty Plugin in a specific mode**
 
 mvn jetty:run -Dapp.mode={mode} (e.g. mvn jetty:run -Dapp.mode=dev)
+
+****
+
+Use the following URLs to see if your project is working: 
 
 **Check if it's running**
 
