@@ -20,20 +20,16 @@ public class Settings {
 		return getProperty("mode");
 	}
 
-	public String getJdbcReadWriteDriver() throws NotFoundException {
-		return getProperty("jdbc.readWrite.driver");
+	public String getHttpClientSocketTimeoutMs() throws NotFoundException {
+		return getProperty("http.client.socket.timeout.ms");
 	}
 
-	public String getJdbcReadWriteUrl() throws NotFoundException {
-		return getProperty("jdbc.readWrite.base.url") + "/" + getProperty("jdbc.readWrite.db") + "?" + getProperty("jdbc.readWrite.params");
+	public String getZapposApiKey() throws NotFoundException {
+		return getProperty("zappos.api.key");
 	}
 
-	public String getJdbcReadWriteUser() throws NotFoundException {
-		return getProperty("jdbc.readWrite.user");
-	}
-
-	public String getJdbcReadWritePassword() throws NotFoundException {
-		return getProperty("jdbc.readWrite.password");
+	public String getZapposApiProductUrl() throws NotFoundException {
+		return getProperty("zappos.api.url.product");
 	}
 
 	public Properties getConfigProperties() {
